@@ -1,0 +1,2 @@
+[tool.pytest.ini_options]
+addopts = "--cov=To-dos-Application --cov-report xml"
