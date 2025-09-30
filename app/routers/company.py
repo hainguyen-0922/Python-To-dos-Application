@@ -1,8 +1,9 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from database import get_db_context
-from models.company import CompanyViewModel
+from models.company import CompanyModel, CompanyViewModel
 from schemas.company import Company
+from services import auth as auth_service
 
 router = APIRouter(prefix="/company", tags=["Company"])
 
