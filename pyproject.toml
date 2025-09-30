@@ -1,2 +1,8 @@
 [tool.pytest.ini_options]
 addopts = "--cov=To-dos-Application --cov-report xml"
+
+[tool.coverage.report]
+omit = [
+    "tests/*",
+    "__init__.py",
+]
