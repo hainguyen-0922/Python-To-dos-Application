@@ -5,13 +5,12 @@ from app.routers.auth import get_db_context
 
 client = TestClient(app)
 
-# Simulate SQLAlchemy query chain
 class DummyQuery:
     def filter(self, *args, **kwargs):
         return self
 
     def all(self):
-        return []  # Simulate empty result list
+        return []
 
 class DummySession:
     def query(self, *args, **kwargs):

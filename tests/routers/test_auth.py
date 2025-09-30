@@ -5,7 +5,6 @@ from app.routers.auth import get_db_context
 
 client = TestClient(app)
 
-# Dummy DB session class
 class DummySession:
     def __hash__(self):
         return 1
@@ -15,7 +14,6 @@ def override_get_db_context():
 
 app.dependency_overrides[get_db_context] = override_get_db_context
 
-# Dummy user object
 class DummyUser:
     def __init__(self, username="testuser"):
         self.username = username
